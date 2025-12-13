@@ -1,36 +1,32 @@
 # Módulo PIA
 # Tarea 1
-# Ejercicio 2. Problema 1: Dividir una lista en 2 listas sepadas de números negativos y positivos
+# Ejercicio 2. Problema 1. Procesamiento de una lista de enteros. 
 #
 # Alumno: Angel Tinoco
 #
 
-def separar_listas (lista):
-    num_positivos = []
-    num_negativos = []
+def procesar_lista (lista):
+    lista_procesada = []
+    
     for num in lista:
-        if num < 0:
-            num_negativos.append(num)
-        else:
-            num_positivos.append(num)
+        if num > 0:
+             if num not in lista_procesada:
+                lista_procesada.append(num)
 
-    num_positivos.sort()
-    num_negativos.sort()
+    lista_procesada.sort()
 
     # Devuelve las 2 listas
-    return num_negativos, num_positivos
+    return lista_procesada
 
 
 #########
 
 # Ejemplo de uso
-lista_numeros = [-10,-2,7,5,-8,10]
+lista_numeros = [4, -1, 2, 4, 3, -5, 2]
 
-lista_negativos, lista_positivos = separar_listas(lista_numeros)
+solucion = procesar_lista(lista_numeros)
 
 # Muestra las listas por pantalla
 print ("La lista original es: ", lista_numeros)
-print ("\nDespués de procesarla:\n")
-print ("Lista de números negativos: \n", lista_negativos)
-print ("Lista de números positivos: \n", lista_positivos)
+print ("\nDespués de procesarla: ", solucion)
 
